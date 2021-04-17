@@ -155,6 +155,34 @@ body {
   color:white;
 }
 
+.aboutMe ul{
+  list-style-type: none;
+  overflow: hidden;
+}
+.aboutMe li{
+  float: left;
+}
+.aboutMe p{
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+
+.footer ul{
+  list-style-type: none;
+  overflow: hidden;
+  width: 30%;
+  margin: auto;
+}
+.footer li{
+  float: left;
+}
+.footer p{
+  width: 30%;
+  margin: auto;
+}
+
+
 /*
 body {
   background-color: #dfd0d0;
