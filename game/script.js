@@ -31,13 +31,14 @@ function updateCountDown(){
     /*const minutes = Math.floor(time/60);*/
     let seconds = time;
     
-    console.log(seconds);
-    
     seconds = seconds < 10 ? "0" + seconds : seconds;
+
     document.getElementById("gameInfo").style.border = "thick solid #0000FF";
-    document.getElementById("gameInfo").style.backgroundColor = colors[targetColor];
-    /*trgt = "<div style='background-color:" + colors[targetColor] + ";width: 250px;height:100px'></div>"*/
-    text = "Time= "+ seconds+ "</br>" + "Score= " + score + "</br>" + "Target Color = " + colors[targetColor] + "</br>";
+    document.getElementById("gameInfo").style.borderRadius = "25px";
+    /*document.getElementById("gameInfo").style.backgroundColor = colors[targetColor];*/
+    trgt = "<div style='background-color:" + colors[targetColor] + ";width: 200px;height:100px;border-radius: 25px;margin-left:10px;'></div>";
+    targetColorText = "<ul style='list-style-type: none;overflow: hidden;'><li style='float: left'>Target Color = </li><li style='float: left'>" + trgt + "</li></ul>";
+    text = "Time= "+ seconds+ "</br>" + "Score= " + score + "</br>" + targetColorText + "</br>";
     countDownElement.innerHTML =  text;
     
     time--;

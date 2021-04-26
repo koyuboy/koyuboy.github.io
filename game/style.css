@@ -18,6 +18,7 @@ body{
     width: 150px;
     height: 150px;
     transition: transform 300ms;
+    border-radius: 15px;
 }
 .color:hover{
     transform: scale(0.9);
