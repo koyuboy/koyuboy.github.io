@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    overflow-x: none;
+}
+body{
+    max-width: max-content;
+    margin: auto;
+}
+
+
+.bottom{
+    display: flex;
+}
+
+.color{
+    width: 150px;
+    height: 150px;
+    transition: transform 300ms;
+}
+.color:hover{
+    transform: scale(0.9);
+}
+
+.modeSelect{
+    margin-top: 1rem;
+    width: 300px;
+    height: 200px;
+    display: grid;
+    text-align: center;
+    font-size : 40px;
+}
+
+.gameInfo{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: bolder;
+    color:blue;
+    
+}
+
+
