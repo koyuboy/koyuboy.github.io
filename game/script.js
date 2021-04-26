@@ -2,7 +2,7 @@ function modeSelectMenu(clear){
     if(clear==1){
         document.getElementById("modeSelect").innerHTML="";
     }else{
-    document.getElementById("modeSelect").innerHTML= "Select Difficulty</br><button id='easy' class= 'levelButtons' onclick='startEasyGame()'>easy</button> <button id='medium' class= 'levelButtons' onclick='startMediumGame()'>medium</button> <button id='hard' class= 'levelButtons' onclick='startHardGame()'>hard</button> "
+    document.getElementById("modeSelect").innerHTML= "Select Difficulty</br><button id='easy' class= 'levelButtons' onclick='startEasyGame()'>Easy</button> <button id='medium' class= 'levelButtons' onclick='startMediumGame()'>Medium</button> <button id='hard' class= 'levelButtons' onclick='startHardGame()'>Hard</button> <button id='extraHard' class= 'levelButtons' onclick='startExtraHardGame()'>Extra Hard</button> <button id='hell' class= 'levelButtons' onclick='startHellGame()'>HELL</button>"
     }
 }
 modeSelectMenu(0)
@@ -144,6 +144,28 @@ function startMediumGame() {
 function startHardGame() {
     score=0;
     size=5;
+
+    modeSelectMenu(1)
+    restartTimer()
+
+    generateButtons()
+    shuffleAndSelectTarget()
+}
+
+function startExtraHardGame() {
+    score=0;
+    size=10;
+
+    modeSelectMenu(1)
+    restartTimer()
+
+    generateButtons()
+    shuffleAndSelectTarget()
+}
+
+function startHellGame() {
+    score=0;
+    size=20;
 
     modeSelectMenu(1)
     restartTimer()
