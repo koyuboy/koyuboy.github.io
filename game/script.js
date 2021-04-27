@@ -30,9 +30,9 @@ function playSoundsArray(){
 }
   
   
-playLaugh(bluetooth)
+
 var firstTime = 0;
-firstTime++;
+
 function modeSelectMenu(clear){
     
     if(clear==1){
@@ -43,9 +43,11 @@ function modeSelectMenu(clear){
     if(score >= 5){
         playLaugh(nokiaArabic)
     }
-    else if(firstTime>0){
-        playLaugh(allahKurtarsin)
-        
+    else if(firstTime==0){
+        playLaugh(bluetooth) 
+        firstTime++;
+    }else{
+        playLaugh(allahKurtarsin) 
     }
     
     document.body.style.backgroundImage = "";
