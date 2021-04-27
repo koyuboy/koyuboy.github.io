@@ -30,7 +30,7 @@ function playSoundsArray(){
 }
   
   
-
+playLaugh(bluetooth)
 
 function modeSelectMenu(clear){
     
@@ -39,13 +39,11 @@ function modeSelectMenu(clear){
     }else{
     document.getElementById("modeSelect").innerHTML= "Select Difficulty</br><button id='easy' class= 'levelButtons' onclick='startEasyGame()'>Easy</button> <button id='medium' class= 'levelButtons' onclick='startMediumGame()'>Medium</button> <button id='hard' class= 'levelButtons' onclick='startHardGame()'>Hard</button> <button id='extraHard' class= 'levelButtons' onclick='startExtraHardGame()'>Extra Hard</button> <button id='hell' class= 'levelButtons' onclick='startHellGame()'>HELL</button>"
     
-    if(score > 5){
+    if(score >= 5){
         playLaugh(nokiaArabic)
-    }else if(score == 0){
-        playLaugh(allahKurtarsin)
     }
     else{
-        playLaugh(bluetooth)
+        playLaugh(allahKurtarsin)
     }
     
     document.body.style.backgroundImage = "";
