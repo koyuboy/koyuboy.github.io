@@ -1,8 +1,54 @@
+var bluetooth = new Audio("sounds/bluetooth.mp3")
+
+var fireInTheHole = new Audio("sounds/fire-in-the-hole.mp3")
+var seytanGulusu = new Audio("sounds/seytan-gulusu-sesi.mp3");
+
+var suphe = new Audio("sounds/suphe.mp3")
+var akasyaduragı = new Audio("sounds/akasyaduragı.mp3")
+var patlama = new Audio("sounds/patlama.mp3")
+var saak = new Audio("sounds/saak.mp3")
+var sasirma = new Audio("sounds/sasirma.mp3")
+
+var nokiaArabic = new Audio("sounds/nokia-arabic.mp3")
+
+var allahKurtarsin = new Audio("sounds/allah-kurtarsin-kardesim-mustafa-tilki.mp3")
+var senZavallisin = new Audio("sounds/sen-zavalli-bir-adamsin.mp3")
+
+var sounds = [suphe,akasyaduragı,senZavallisin,patlama,saak,sasirma];
+var soundIdx = 0;
+
+function playLaugh(sound) {
+    sound.play();
+  }
+
+function playSoundsArray(){
+    sounds[soundIdx].play();
+    soundIdx++;
+    if (soundIdx == sounds.length){
+        soundIdx=0;
+    }
+}
+  
+  
+
+
 function modeSelectMenu(clear){
+    
     if(clear==1){
         document.getElementById("modeSelect").innerHTML="";
     }else{
     document.getElementById("modeSelect").innerHTML= "Select Difficulty</br><button id='easy' class= 'levelButtons' onclick='startEasyGame()'>Easy</button> <button id='medium' class= 'levelButtons' onclick='startMediumGame()'>Medium</button> <button id='hard' class= 'levelButtons' onclick='startHardGame()'>Hard</button> <button id='extraHard' class= 'levelButtons' onclick='startExtraHardGame()'>Extra Hard</button> <button id='hell' class= 'levelButtons' onclick='startHellGame()'>HELL</button>"
+    
+    if(score > 3){
+        playLaugh(nokiaArabic)
+    }else if(score == 0){
+        playLaugh(allahKurtarsin)
+    }
+    else{
+        playLaugh(bluetooth)
+    }
+    
+    document.body.style.backgroundImage = "";
     }
 }
 modeSelectMenu(0)
@@ -10,6 +56,7 @@ modeSelectMenu(0)
 
 
 
+  
 /* Global Variables */
 var targetColor;
 var score;
@@ -36,6 +83,7 @@ function updateCountDown(){
     document.getElementById("gameInfo").style.border = "thick solid #0000FF";
     document.getElementById("gameInfo").style.borderRadius = "25px";
     /*document.getElementById("gameInfo").style.backgroundColor = colors[targetColor];*/
+    document.getElementById("gameInfo").style.backgroundColor = "white";
     trgt = "<div style='background-color:" + colors[targetColor] + ";width: 200px;height:100px;border-radius: 25px;margin-left:10px;'></div>";
     targetColorText = "<ul style='list-style-type: none;overflow: hidden;'><li style='float: left'>Target Color = </li><li style='float: left'>" + trgt + "</li></ul>";
     text = "Time= "+ seconds+ "</br>" + "Score= " + score + "</br>" + targetColorText + "</br>";
@@ -62,7 +110,7 @@ function updateCountDown(){
 
 function restartTimer(){
     clearInterval(timer);
-    time=60
+    time=10
     timer = setInterval(updateCountDown, 1000);
 }
 
@@ -107,6 +155,9 @@ function selectFunc(element) {
 
         shuffleAndSelectTarget()
         
+    }else{
+        playSoundsArray()
+      
     }
   }
 
@@ -165,11 +216,36 @@ function startExtraHardGame() {
 }
 
 function startHellGame() {
+    
     score=0;
     size=20;
 
+
+    playLaugh(fireInTheHole);
+
+
+    setTimeout(function() {
+        playLaugh(seytanGulusu);
+        document.body.style.backgroundImage = "url('hell.jpg')";
+        //document.body.style.backgroundRepeat = "no-repeat";
+        
+    }, 2000); 
+   
+    
+        
+    
+    
+
     modeSelectMenu(1)
-    restartTimer()
+    
+    setTimeout(function() {
+        
+        restartTimer()
+        
+        
+    }, 2000); 
+    
+    
 
     generateButtons()
     shuffleAndSelectTarget()
