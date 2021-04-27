@@ -110,7 +110,7 @@ function updateCountDown(){
 
 function restartTimer(){
     clearInterval(timer);
-    time=10
+    time=60
     timer = setInterval(updateCountDown, 1000);
 }
 
