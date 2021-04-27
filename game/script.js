@@ -32,6 +32,7 @@ function playSoundsArray(){
   
 playLaugh(bluetooth)
 var firstTime = 0;
+firstTime++;
 function modeSelectMenu(clear){
     
     if(clear==1){
@@ -44,7 +45,7 @@ function modeSelectMenu(clear){
     }
     else if(firstTime>0){
         playLaugh(allahKurtarsin)
-        firstTime++;
+        
     }
     
     document.body.style.backgroundImage = "";
